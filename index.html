@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leslie Mobile Massage Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F5F2;--surface:#FFFFFF;--ink:#16302B;--muted:#53675F;--line:#CBD9D1;--mist:#DCE8E1;--accent:#16302B;--on-accent:#F2F5F2;--gold:#9A6F1E;--rose:#B04668;--head:'Marcellus',Georgia,serif;--body:'Figtree',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--rose:#E58FAA;--bg:#0F1D1A;--surface:#17282A;--ink:#E6EFEA;--muted:#9DB2A9;--line:#2B4040;--mist:#1D3330;--accent:#DCE8E1;--on-accent:#0F1D1A;--gold:#D4A94F;color-scheme:dark}}
+:root[data-theme="dark"]{--rose:#E58FAA;--bg:#0F1D1A;--surface:#17282A;--ink:#E6EFEA;--muted:#9DB2A9;--line:#2B4040;--mist:#1D3330;--accent:#DCE8E1;--on-accent:#0F1D1A;--gold:#D4A94F;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.15;margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.25rem 0}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--head);font-size:1.2rem;line-height:1.1;text-decoration:none;color:inherit}.brand svg{flex:none}
+.btn-sm{font-size:.95rem;font-weight:600;text-decoration:none;color:inherit;border:1.5px solid var(--ink);padding:.5rem 1rem;border-radius:99px;white-space:nowrap}
+.hero{padding:3rem 0 4rem}
+@media(min-width:820px){.hero{padding:4.5rem 0 5.5rem}}
+.hero h1,.hero .tag,.hero p.lead{max-width:40rem}.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);letter-spacing:-.01em}
+.tag{font-family:var(--head);font-size:1.35rem;color:var(--gold);margin:1rem 0 0}
+.hero p.lead{color:var(--muted);max-width:34rem;margin:1.25rem 0 2rem;font-size:1.12rem}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font:600 1rem var(--body);padding:.9rem 1.6rem;border-radius:99px;border:0;cursor:pointer;text-decoration:none}
+.btn:hover{opacity:.9}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.stones{width:100%;max-width:360px;justify-self:center}
+section{padding:3rem 0}
+section h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:.5rem}
+.sub{color:var(--muted);margin:0 0 1.75rem;max-width:38rem}
+.menu{display:grid;gap:3rem}
+@media(min-width:900px){.menu{grid-template-columns:1fr 1fr;gap:3.5rem}}
+.menu h3{font-size:1.6rem;margin-bottom:.25rem}
+.svc{border-top:1px solid var(--line);margin-top:1rem}
+.svc div{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.svc b{font-weight:600}
+.svc p{grid-column:1;margin:0;color:var(--muted);font-size:.98rem}
+.svc .price{grid-column:2;grid-row:1;font-family:var(--head);font-size:1.25rem;text-align:right}
+.svc .dur{grid-column:2;grid-row:2;color:var(--muted);font-size:.9rem;text-align:right}
+.addons{display:grid;gap:.6rem;margin:0;padding:0;list-style:none}
+@media(min-width:560px){.addons{grid-template-columns:1fr 1fr}}
+.addons li{display:flex;justify-content:space-between;gap:1rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem}
+.addons li span:last-child{font-family:var(--head);font-size:1.15rem}
+.why{display:grid;gap:.6rem;list-style:none;margin:0;padding:0}
+@media(min-width:700px){.why{grid-template-columns:1fr 1fr 1fr}}
+.why li{border-left:3px solid var(--gold);padding:.4rem 0 .4rem 1rem}
+.book{background:var(--mist);border-radius:28px;padding:2rem 1.25rem}
+@media(min-width:700px){.book{padding:3rem}}
+.book-grid{display:grid;gap:2.5rem}
+@media(min-width:860px){.book-grid{grid-template-columns:.8fr 1.2fr}}
+form{display:grid;gap:1.1rem}
+.row{display:grid;gap:1.1rem}
+@media(min-width:560px){.row{grid-template-columns:1fr 1fr}}
+label,.lbl{font-weight:600;font-size:.95rem;display:block;margin-bottom:.35rem}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+textarea{min-height:70px;resize:vertical}
+.adds{display:flex;flex-wrap:wrap;gap:.5rem}
+.adds label{display:flex;align-items:center;gap:.45rem;margin:0;font-weight:500;background:var(--surface);border:1.5px solid var(--line);border-radius:99px;padding:.4rem .8rem;cursor:pointer}
+.adds input{width:auto;accent-color:var(--accent)}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.apps input{position:absolute;opacity:0;width:1px;height:1px}
+.apps label{margin:0;text-align:center;padding:.8rem .4rem;border:1.5px solid var(--line);background:var(--surface);border-radius:12px;cursor:pointer;font-weight:600}
+.apps input:checked+label{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.apps input:focus-visible+label{outline:3px solid var(--gold);outline-offset:2px}
+.note{font-size:.95rem;color:var(--muted);margin:0}
+.result{display:none;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:1.1rem}
+.result.on{display:block}
+.result pre{white-space:pre-wrap;font:inherit;margin:.5rem 0 1rem;padding:.8rem;background:var(--bg);border-radius:10px}
+.acts{display:flex;flex-wrap:wrap;gap:.6rem}
+.err{color:#B3261E;font-size:.95rem;min-height:1.2em;margin:0}
+@media(prefers-color-scheme:dark){.err{color:#F2B8B5}}
+footer{padding:2.5rem 0;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line);text-align:center}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="#top" aria-label="Leslie Mobile Massage Service, home"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20.5" fill="none" stroke="var(--gold)" stroke-width="1.5"/><path d="M22 35 C9 25 9 13 16.5 12 C19.5 11.6 22 14 22 16.5 C22 14 24.5 11.6 27.5 12 C35 13 35 25 22 35Z" fill="var(--rose)"/><path d="M22 36 C15 36 10 32 8.5 27 C13 28 17 30 22 36Z M22 36 C29 36 34 32 35.5 27 C31 28 27 30 22 36Z" fill="var(--gold)"/></svg><span>Leslie<br>Mobile Massage Service</span></a>
+  <a class="btn-sm" href="#book">Book now</a>
+</header>
+<main id="top">
+<div class="hero">
+  <div>
+    <h1>Massage services</h1>
+    <p class="tag">Relax • Refresh • Rejuvenate</p>
+    <p class="lead">Experience professional massage therapy designed to help you relax, release muscle tension and feel refreshed. We offer regular and luxury massage treatments tailored to your comfort and wellness needs.</p>
+    <a class="btn" href="#book">Book your appointment</a>
+  </div>
+</div>
+
+<section id="services">
+  <div class="menu">
+    <div><h3>Regular massage services</h3><div class="svc" id="reg"></div></div>
+    <div><h3>Luxury massage services</h3><div class="svc" id="lux"></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Add-on services</h2>
+  <p class="sub">Add any of these to your session.</p>
+  <ul class="addons" id="addl"></ul>
+</section>
+
+<section>
+  <h2>Why choose us?</h2>
+  <ul class="why" style="margin-top:1.5rem">
+    <li>Professional and attentive service</li>
+    <li>Clean and relaxing environment</li>
+    <li>Personalized treatments</li>
+    <li>Quality products</li>
+    <li>Convenient appointment scheduling</li>
+  </ul>
+</section>
+
+<section id="book">
+  <div class="book">
+    <div class="book-grid">
+      <div>
+        <h2>Book your appointment today</h2>
+        <p class="sub">Give your body the relaxation it deserves. Fill in your details and your request is prepared for you to send on Telegram, Signal or Zangi.</p>
+        <p class="note">Appointments are required. Please book in advance. Your comfort is our priority.</p>
+      </div>
+      <form id="f" novalidate>
+        <div><label for="svc">Massage</label><select id="svc"></select></div>
+        <div><span class="lbl">Add-ons (optional)</span><div class="adds" id="adds"></div></div>
+        <div class="row">
+          <div><label for="date">Preferred date</label><input type="date" id="date"></div>
+          <div><label for="time">Preferred time</label><input type="time" id="time"></div>
+        </div>
+        <div class="row">
+          <div><label for="name">Your name</label><input id="name" autocomplete="name"></div>
+          <div><label for="addr">Address or area</label><input id="addr" autocomplete="street-address"></div>
+        </div>
+        <div><label for="notes">Anything we should know (optional)</label><textarea id="notes" placeholder="Injuries, pressure preference, areas to focus on"></textarea></div>
+        <div role="radiogroup" aria-labelledby="applbl">
+          <span class="lbl" id="applbl">Send your request with</span>
+          <div class="apps">
+            <span><input type="radio" name="app" id="a-tg" value="telegram" checked><label for="a-tg">Telegram</label></span>
+            <span><input type="radio" name="app" id="a-sg" value="signal"><label for="a-sg">Signal</label></span>
+            <span><input type="radio" name="app" id="a-zg" value="zangi"><label for="a-zg">Zangi</label></span>
+          </div>
+        </div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit">Prepare my message</button>
+        <div class="result" id="res" aria-live="polite">
+          <strong id="resTitle"></strong>
+          <pre id="msg"></pre>
+          <div class="acts">
+            <a class="btn" id="open" href="#" target="_blank" rel="noopener">Open chat</a>
+            <button class="btn alt" type="button" id="copy">Copy message</button>
+          </div>
+          <p class="note" id="hint" style="margin-top:.8rem"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer>Your relaxation and comfort are our priority. Contact us today to schedule your appointment.<br>Relax • Refresh • Rejuvenate</footer>
+</div>
+
+<script>
+// ===== EDIT THESE =====
+var CONTACT = {
+  telegramUsername: "mobilemassagespaa",
+  signalPhone: "+12232868384",
+  zangiLink: "https://services.zangi.com/dl/conversation/2371798278"
+};
+// ======================
+var REG = [
+ ["Swedish Massage","A gentle, relaxing full-body massage designed to reduce stress and promote relaxation.","60 mins",70],
+ ["Deep Tissue Massage","Focused massage techniques targeting deeper muscle tension and tightness.","60 mins",90],
+ ["Full Body Massage","A complete body massage experience to help you unwind and relax.","60 mins",85],
+ ["Back, Neck & Shoulder Massage","Focused treatment for areas that commonly experience stress and muscle tension.","30 mins",45],
+ ["Foot Massage","A soothing treatment for tired feet and everyday relaxation.","30 mins",40],
+ ["Sports Massage","Designed to address exercise-related muscle tightness and support recovery.","60 mins",95]];
+var LUX = [
+ ["Hot Stone Massage","A luxurious massage using warm stones to enhance relaxation.","75 mins",120],
+ ["Aromatherapy Massage","A calming massage experience using aromatic essential oils.","60 mins",110],
+ ["Premium Full Body Massage","An extended, personalized massage experience for complete relaxation.","90 mins",150],
+ ["Luxury Body Scrub","A refreshing exfoliating treatment that leaves your skin feeling smooth and soft.","60 mins",100],
+ ["Luxury Facial Treatment","A refreshing facial experience focused on cleansing and hydration.","60 mins",90],
+ ["Couple’s Massage","A relaxing massage experience designed for two people.","60 mins",200]];
+var ADD = [["Scalp Massage",20],["Hand & Arm Massage",25],["Foot Spa Treatment",35],["Body Polishing",50]];
+
+var $ = function(id){return document.getElementById(id)};
+function rows(list){return list.map(function(s){return '<div><b>'+s[0]+'</b><span class="price">$'+s[3]+'</span><p>'+s[1]+'</p><span class="dur">'+s[2]+'</span></div>'}).join("")}
+$("reg").innerHTML = rows(REG);
+$("lux").innerHTML = rows(LUX);
+$("addl").innerHTML = ADD.map(function(a){return '<li><span>'+a[0]+'</span><span>$'+a[1]+'</span></li>'}).join("");
+function opts(label,list){return '<optgroup label="'+label+'">'+list.map(function(s){return '<option>'+s[0]+' ('+s[2]+', $'+s[3]+')</option>'}).join("")+'</optgroup>'}
+$("svc").innerHTML = opts("Regular massage",REG)+opts("Luxury massage",LUX);
+$("adds").innerHTML = ADD.map(function(a,i){return '<label><input type="checkbox" value="'+a[0]+' ($'+a[1]+')">'+a[0]+'</label>'}).join("");
+
+var today = new Date(); today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+$("date").min = today.toISOString().slice(0,10);
+
+function build(){
+  var d=$("date").value, nice=new Date(d+"T00:00").toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"});
+  var adds=[].slice.call(document.querySelectorAll("#adds input:checked")).map(function(c){return c.value});
+  var m="Hello, I would like to book a massage.\nMassage: "+$("svc").value;
+  if(adds.length) m+="\nAdd-ons: "+adds.join(", ");
+  m+="\nDate: "+nice+"\nTime: "+$("time").value+"\nName: "+$("name").value.trim()+"\nAddress/area: "+$("addr").value.trim();
+  if($("notes").value.trim()) m+="\nNotes: "+$("notes").value.trim();
+  return m;
+}
+function copyText(t){return (navigator.clipboard&&navigator.clipboard.writeText)?navigator.clipboard.writeText(t):Promise.reject()}
+$("f").addEventListener("submit",function(e){
+  e.preventDefault(); var err=$("err"); err.textContent="";
+  var need=[["name","Enter your name."],["addr","Enter your address or area."],["date","Choose a preferred date."],["time","Choose a preferred time."]];
+  for(var i=0;i<need.length;i++){ if(!$(need[i][0]).value.trim()){err.textContent=need[i][1];$(need[i][0]).focus();return} }
+  var app=document.querySelector('input[name="app"]:checked').value, msg=build(), link="", hint, title;
+  if(app==="telegram"){
+    link="https://t.me/"+encodeURIComponent(CONTACT.telegramUsername)+"?text="+encodeURIComponent(msg);
+    title="Your Telegram message is ready"; hint="Open chat fills in the message. Press send to finish.";
+  } else if(app==="signal"){
+    link="https://signal.me/#p/"+encodeURIComponent(CONTACT.signalPhone);
+    title="Your Signal message is ready"; hint="Signal cannot pre-fill text. The message is copied when you tap Open chat. Paste it into the chat.";
+  } else {
+    link=CONTACT.zangiLink;
+    title="Your Zangi message is ready"; hint="Zangi cannot pre-fill text. The message is copied when you tap Open chat. Paste it into the chat.";
+  }
+  $("resTitle").textContent=title; $("msg").textContent=msg; $("hint").textContent=hint;
+  var o=$("open"); if(link){o.href=link;o.style.display=""}else{o.style.display="none"}
+  o.onclick=function(){ if(app!=="telegram") copyText(msg).catch(function(){}) };
+  $("copy").dataset.msg=msg; $("res").classList.add("on");
+  $("res").scrollIntoView({behavior:"smooth",block:"nearest"});
+});
+$("copy").addEventListener("click",function(){
+  var b=this; copyText(b.dataset.msg).then(function(){b.textContent="Copied"}).catch(function(){b.textContent="Select the text above to copy"});
+  setTimeout(function(){b.textContent="Copy message"},2500);
+});
+</script>
+</body>
+</html>
